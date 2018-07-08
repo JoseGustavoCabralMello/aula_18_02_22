@@ -37,18 +37,20 @@ public class FileDemonstration {
                 System.out.println("\n\nDirectory contents:\n");
                 for (String directoryName : directory) {
                     File cont = new File(name, directoryName);
-                    System.out.printf("%s -%s\n", directoryName, cont.isFile());
+                    System.out.printf("%s\n", directoryName);
                     if (cont.isFile() == true) {
                         t = cont.length();
                         soma = soma + t;
-                        System.out.printf("Tamanho Arquivo: %s\n", t);
+                        //System.out.printf("Tamanho Arquivo: %s\n", t);
                         countf++;
                     } else if (cont.isDirectory() == true) {
-                        System.out.println("Pasta: "+ directoryName);
+                        //System.out.println("Pasta: "+ directoryName);
+                        countd++;
                     }
                 } // end else
                 System.out.println("\nNumero de arquivos: " + countf);
-                System.out.printf("Tamanho Total: %s\n", soma);
+                System.out.println("Numero de diretórios: " + countd);
+                System.out.printf("\nTamanho Total: %sMB\n", soma/1000000);
 
             } // end outer if
             else // not file or directory, output error message
